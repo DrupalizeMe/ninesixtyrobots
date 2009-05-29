@@ -58,10 +58,10 @@ function ninesixtyrobots_breadcrumb($breadcrumb) {
 }
 
 function ninesixtyrobots_username($object) {
-  if ($object->uid && $object->name) {
+  if ($object->uid && $object->name && module_exists('profile')) {
     
     profile_load_profile($object);
-    if (!empty($object->profile_real_name)) {
+    if (!empty(trim($object->profile_real_name))) {
       $object->name = $object->profile_real_name;
     }
     
