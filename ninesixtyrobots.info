@@ -1,6 +1,7 @@
 name = 960 Robots
 description = An example theme for Lullabot's theming video based on the 960 grid system.
 core = 6.x
+php = 5.2.0
 engine = phptemplate
 stylesheets[all][] = css/reset.css
 stylesheets[all][] = css/960.css
