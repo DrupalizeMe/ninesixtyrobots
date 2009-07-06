@@ -85,8 +85,21 @@
 
       <!-- footer bottom starts here -->
       <div id="footer-bottom">
-        <p class="bottom-left"><?php print $footer_message; ?></p>
-        <?php print theme('links', $secondary_links, array('class' => 'links secondary-links')); ?>
+        <div id="footer-meta" class="clear-block">
+          <?php if ($footer_message): ?>
+          <p class="bottom-left"><?php print $footer_message; ?></p>
+          <?php endif; ?>
+  
+          <?php if ($secondary_links): ?>
+          <?php print theme('links', $secondary_links, array('class' => 'links secondary-links')); ?>
+          <?php endif; ?>
+        </div>
+
+        <?php if ($footer): ?>
+        <div id="footer-bottom-content">
+          <?php print $footer; ?>
+        </div>
+        <?php endif; ?>
       </div>
       <!-- footer bottom ends here -->
 

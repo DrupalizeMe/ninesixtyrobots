@@ -624,6 +624,30 @@ div.dateblock span.year {
   background: none;
   border: none;
 }
+#footer-content table img {
+  position: relative;
+  padding: 8px;
+  margin: 5px;
+  background: #fafafa;
+  border: 1px solid #ddd;
+}
+#footer-content table img:hover {
+  border: 1px solid #D2D2D2;
+  background: #DDD;
+}
+#footer-content table a:hover {
+  background-color: transparent;
+  border: none
+}
+#footer-content table {
+  margin: 10px 0;
+}
+#footer-content tr {
+  background: transparent;
+}
+#footer-content td {
+  border: none;
+}
 
 /* Footer-bottom */
 #footer-bottom {
@@ -641,31 +665,8 @@ div.dateblock span.year {
   text-align: right;
   padding: 10px 0;
 }
-
-#footer-content table img {
-  position: relative;
-  padding: 8px;
-  margin: 5px;
-  background: #fafafa;
-  border: 1px solid #ddd;
-}
-#footer-content table img:hover {
-  border: 1px solid #D2D2D2;
-  background: #DDD;
-}
-#footer-content table a:hover {
-  background-color: transparent;
-  border: none
-}
-
-#footer-content table {
-  margin: 10px 0;
-}
-#footer-content tr {
-  background: transparent;
-}
-#footer-content td {
-  border: none;
+#footer-bottom-content {
+  text-align: center;
 }
 
 /* Links */

@@ -9,8 +9,9 @@ stylesheets[all][] = css/main.css
 
 regions[left] = Left sidebar (on right)
 regions[right] = Right sidebar (on right)
-regions[footer_left] = Left Footer
-regions[footer_right] = Right Footer
+regions[footer_left] = Footer left
+regions[footer_right] = Footer right
+regions[footer] = Footer bottom
 
 scripts[] = js/jquery.autofill.js
 scripts[] = js/javascript.js
