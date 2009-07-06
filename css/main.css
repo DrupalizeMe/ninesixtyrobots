@@ -842,3 +842,20 @@ a.tabledrag-handle {
 div.view div.views-admin-links {
   width: auto;
 }
+
+/* Vertical tabs support */
+.vertical-tabs {
+  background: #fff;
+}
+.vertical-tabs .vertical-tab-button a span {
+  color: #666;
+}
+.vertical-tabs .vertical-tab-button a:hover {
+  background-color: #f6f6f6;
+  border: none;
+}
+.vertical-tabs .selected a,
+.vertical-tabs .selected a:hover {
+  background: #fff;
+}
+
