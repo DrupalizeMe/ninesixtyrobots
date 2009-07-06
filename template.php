@@ -27,18 +27,20 @@ function ninesixtyrobots_preprocess_page(&$vars) {
   if (is_null($use_twitter)) {
     $use_twitter = 1;
   }
-  
-  $query = theme_get_setting('twitter_search_term');
-  if (is_null($query)) {
-    $query = 'lullabot';
-  }
-  $query = urlencode($query);
-    
+
   if ($use_twitter) {
+    $query = theme_get_setting('twitter_search_term');
+    if (is_null($query)) {
+      $query = 'lullabot';
+    }
+    $query = drupal_urlencode($query);
+
     $response = drupal_http_request('http://search.twitter.com/search.json?q=' . $query);
-    $data = json_decode($response->data);
-    $tweet = $data->results[array_rand($data->results)];
-    $vars['site_slogan'] = check_plain($tweet->text);
+    if ($response->code == 200) {
+      $data = json_decode($response->data);
+      $tweet = $data->results[array_rand($data->results)];
+      $vars['site_slogan'] = check_plain($tweet->text);
+    }
   }
 }
 
