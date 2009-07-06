@@ -27,7 +27,7 @@
     <!-- content starts -->
     <div id="content-wrapper" class="container_16">
 
-    	<div id="breadcrumb" class="grid_16"><?php print $breadcrumb; ?></div>
+      <div id="breadcrumb" class="grid_16"><?php print $breadcrumb; ?></div>
 
       <!-- main -->
       <div id="main" class="<?php print ($left && $right) ? 'grid_8' : (($left || $right) ? 'grid_12' : 'grid_16') ?>">
