@@ -30,7 +30,7 @@
     	<div id="breadcrumb" class="grid_16"><?php print $breadcrumb; ?></div>
 
       <!-- main -->
-      <div id="main" class="grid_8">
+      <div id="main" class="<?php print ($left && $right) ? 'grid_8' : (($left || $right) ? 'grid_12' : 'grid_16') ?>">
         <?php if (!empty($title)): ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
         <?php if (!empty($tabs)): ?><div class="tabs"><?php print $tabs; ?></div><?php endif; ?>
         <?php if (!empty($messages)): print $messages; endif; ?>
@@ -42,21 +42,27 @@
       <!-- main ends here -->
 
       <!-- sidebars starts here -->
-      <div id="sidebars" class="grid_8">
+      <?php if ($left || $right): ?>
+      <div id="sidebars" class="<?php print ($left && $right) ? 'grid_8' : 'grid_4' ?>">
 
         <!-- left sidebar starts here -->
+        <?php if ($left): ?>
         <div class="grid_4 alpha sidebar-left">
           <?php print $left; ?>
         </div>
+        <?php endif; ?>
         <!-- left sidebar ends here -->
 
         <!-- right sidebar starts here -->
+        <?php if ($right): ?>
         <div class="grid_4 omega sidebar-right">
           <?php print $right; ?>
         </div>
+        <?php endif; ?>
         <!-- right sidebar ends here -->
 
       </div>
+      <?php endif; ?>
       <!-- sidebars end here -->
 
     </div>
