@@ -140,10 +140,10 @@ blockquote {
 table {
   border-collapse: collapse;
 }
-tr {
+tr.odd {
   background: #fff;
 }
-tr.altrow {
+tr.even {
   background: #F9F9F9;
 }
 th, td {
