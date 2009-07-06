@@ -43,6 +43,7 @@ function ninesixtyrobots_preprocess_page(&$vars) {
       if ($response->code == 200) {
         $data = json_decode($response->data);
         // Set a 5 minute cache on retrieving tweets.
+        // Note if this isn't updating on your site *run cron*.
         cache_set('ninesixtyrobots_tweets', $data, 'cache', 300);
       }
     }
