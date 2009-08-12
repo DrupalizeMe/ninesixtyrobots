@@ -73,11 +73,13 @@ function ninesixtyrobots_breadcrumb($breadcrumb) {
 }
 
 function ninesixtyrobots_username($object) {
-  if ($object->uid && $object->name && module_exists('profile')) {
+  if ($object->uid && $object->name) {
     
-    profile_load_profile($object);
-    if (!empty($object->profile_real_name)) {
-      $object->name = $object->profile_real_name;
+    if (module_exists('profile')) {
+      profile_load_profile($object);
+      if (!empty($object->profile_real_name)) {
+        $object->name = $object->profile_real_name;
+      }
     }
     
     // Shorten the name when it is too long or it will break many tables.
