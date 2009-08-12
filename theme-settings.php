@@ -1,6 +1,9 @@
 <?php
 // $Id$
 
+/**
+ * Implementation of themehook_settings().
+ */
 function ninesixtyrobots_settings($saved_settings) {
   $defaults = array(
     'breadcrumb_delimiter' => ' » ',
