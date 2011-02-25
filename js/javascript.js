@@ -1,4 +1,3 @@
-// $Id$
 
 // Prefill the search box with Search... text.
 $(document).ready(function(){

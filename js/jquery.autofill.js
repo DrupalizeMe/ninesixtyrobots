@@ -1,4 +1,3 @@
-// $Id$
 
 // Auto-Fill Plugin
 // Written by Joe Sak http://www.joesak.com/2008/11/19/a-jquery-function-to-auto-fill-input-fields-and-clear-them-on-click/

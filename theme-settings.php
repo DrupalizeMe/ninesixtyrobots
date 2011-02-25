@@ -1,5 +1,4 @@
 <?php
-// $Id$
 
 /**
  * Implementation of themehook_settings().
