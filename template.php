@@ -1,30 +1,6 @@
 <?php
 
 /**
- * Implmentation of hook_theme().
- */
-function ninesixtyrobots_theme() {
-  return array(
-    // Add our own function to override the default node form for story.
-    'story_node_form' => array(
-      'arguments' => array('form' => NULL),
-    ),
-  );
-}
-
-/**
- * Custom function to pull the Published check box out and make it obvious.
- */
-function ninesixtyrobots_story_node_form($form) {
-  $published = drupal_render($form['options']['status']);
-  $buttons = drupal_render($form['buttons']);
-  // Make sure we also render the rest of the form, not just our custom stuff.
-  $everything_else = drupal_render($form);
-  
-  return $everything_else . $published . $buttons;  
-}
-
-/**
  * Add custom PHPTemplate variables into the node template.
  */
 function ninesixtyrobots_preprocess_node(&$vars) {
@@ -56,7 +32,7 @@ function ninesixtyrobots_preprocess_page(&$vars) {
       if (is_null($query)) {
         $query = 'lullabot';
       }
-      $query = drupal_urlencode($query);
+      $query = drupal_encode_path($query);
 
       $response = drupal_http_request('http://search.twitter.com/search.json?q=' . $query);
       if ($response->code == 200) {
@@ -90,6 +66,8 @@ function ninesixtyrobots_breadcrumb($breadcrumb) {
  * Override the username display to automatically swap out username for a 
  * Profile module field called real_name, if it exists.
  */
+/*
+TODO: needs to be rewritten for Field API on a user object.
 function ninesixtyrobots_username($object) {
   if ($object->uid && $object->name) {
     
@@ -137,13 +115,17 @@ function ninesixtyrobots_username($object) {
 
   return $output;
 }
-
+*/
+ 
 /**
  * Override the search box to add our pretty graphic instead of the button.
  */
+/*
+TODO: this needs to target the block now instead.
 function ninesixtyrobots_search_theme_form($form) {
   $form['submit']['#type'] = 'image_button';
   $form['submit']['#src'] = drupal_get_path('theme', 'ninesixtyrobots') . '/images/search.png';
   $form['submit']['#attributes']['class'] = 'btn';
   return '<div id="search" class="container-inline">' . drupal_render($form) . '</div>';
 }
+*/
