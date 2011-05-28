@@ -1,3 +1,5 @@
+<?php
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language ?>" lang="<?php print $language->language ?>" dir="<?php print $language->dir ?>">
 <head>
@@ -27,10 +29,10 @@
     <!-- content starts -->
     <div id="content-wrapper" class="container_16">
 
-    	<div id="breadcrumb" class="grid_16"><?php print $breadcrumb; ?></div>
+      <div id="breadcrumb" class="grid_16"><?php print $breadcrumb; ?></div>
 
       <!-- main -->
-      <div id="main" class="grid_8">
+      <div id="main" class="<?php print ($left && $right) ? 'grid_8' : (($left || $right) ? 'grid_12' : 'grid_16') ?>">
         <?php if (!empty($title)): ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
         <?php if (!empty($tabs)): ?><div class="tabs"><?php print $tabs; ?></div><?php endif; ?>
         <?php if (!empty($messages)): print $messages; endif; ?>
@@ -42,21 +44,27 @@
       <!-- main ends here -->
 
       <!-- sidebars starts here -->
-      <div id="sidebars" class="grid_8">
+      <?php if ($left || $right): ?>
+      <div id="sidebars" class="<?php print ($left && $right) ? 'grid_8' : 'grid_4' ?>">
 
         <!-- left sidebar starts here -->
+        <?php if ($left): ?>
         <div class="grid_4 alpha sidebar-left">
           <?php print $left; ?>
         </div>
+        <?php endif; ?>
         <!-- left sidebar ends here -->
 
         <!-- right sidebar starts here -->
+        <?php if ($right): ?>
         <div class="grid_4 omega sidebar-right">
           <?php print $right; ?>
         </div>
+        <?php endif; ?>
         <!-- right sidebar ends here -->
 
       </div>
+      <?php endif; ?>
       <!-- sidebars end here -->
 
     </div>
@@ -85,8 +93,21 @@
 
       <!-- footer bottom starts here -->
       <div id="footer-bottom">
-        <p class="bottom-left"><?php print $footer_message; ?></p>
-        <?php print theme('links', $secondary_links, array('class' => 'links secondary-links')); ?>
+        <div id="footer-meta" class="clear-block">
+          <?php if ($footer_message): ?>
+          <p class="bottom-left"><?php print $footer_message; ?></p>
+          <?php endif; ?>
+  
+          <?php if ($secondary_links): ?>
+          <?php print theme('links', $secondary_links, array('class' => 'links secondary-links')); ?>
+          <?php endif; ?>
+        </div>
+
+        <?php if ($footer): ?>
+        <div id="footer-bottom-content">
+          <?php print $footer; ?>
+        </div>
+        <?php endif; ?>
       </div>
       <!-- footer bottom ends here -->
 

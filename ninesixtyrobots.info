@@ -1,6 +1,8 @@
+
 name = 960 Robots
-description = An example theme for Lullabot's theming video based on the 960 grid system.
+description = An example theme based on Lullabot's theming video using the 960 grid system.
 core = 6.x
+php = 5.2.0
 engine = phptemplate
 stylesheets[all][] = css/reset.css
 stylesheets[all][] = css/960.css
@@ -8,8 +10,9 @@ stylesheets[all][] = css/main.css
 
 regions[left] = Left sidebar (on right)
 regions[right] = Right sidebar (on right)
-regions[footer_left] = Left Footer
-regions[footer_right] = Right Footer
+regions[footer_left] = Footer left
+regions[footer_right] = Footer right
+regions[footer] = Footer bottom
 
 scripts[] = js/jquery.autofill.js
 scripts[] = js/javascript.js
