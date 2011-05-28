@@ -51,14 +51,18 @@ function ninesixtyrobots_preprocess_page(&$vars) {
 /**
  * Override the breadcrumb to allow for a theme delimiter setting.
  */
-function ninesixtyrobots_breadcrumb($breadcrumb) {
+function ninesixtyrobots_breadcrumb($variables) {
+  $breadcrumb = $variables['breadcrumb'];
+  $delimiter = theme_get_setting('breadcrumb_delimiter');
+  if (is_null($delimiter)) {
+    $delimiter = ' » ';
+  }
+
   if (!empty($breadcrumb)) {
-    $breadcrumb[] = drupal_get_title();
-    $delimiter = theme_get_setting('breadcrumb_delimiter');
-    if (is_null($delimiter)) {
-      $delimiter = ' » ';
-    }
-    return '<div class="breadcrumb">'. implode($delimiter, $breadcrumb) .'</div>';
+    $output = '<h2 class="element-invisible">' . t('You are here') . '</h2>';
+
+    $output .= '<div class="breadcrumb">' . implode($delimiter, $breadcrumb) . '</div>';
+    return $output;
   }
 }
 

@@ -1,4 +1,3 @@
-
   <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
     <?php print render($title_prefix); ?>
@@ -16,11 +15,6 @@
         <?php print $submitted; ?>
       </div>
     <?php endif; ?>
-    
-    <?php if ($terms): ?>
-      <div class="terms terms-inline"><?php print $terms ?></div>
-    <?php endif;?>
-    </div>
     </div>
 
     <div class="content clearfix"<?php print $content_attributes; ?>>
