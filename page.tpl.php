@@ -59,7 +59,7 @@
         <!-- left sidebar ends here -->
 
         <!-- right sidebar starts here -->
-        <?php if ($content['right']): ?>
+        <?php if ($page['right']): ?>
         <div class="grid_4 omega sidebar-right">
           <?php print render($page['right']); ?>
         </div>
