@@ -19,6 +19,7 @@
             ),
           )); ?>
         </div>
+        <?php print render($page['header']); ?>
       </div>
     </div>
     <!-- header ends here -->
