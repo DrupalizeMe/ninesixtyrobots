@@ -1,3 +1,7 @@
+/**
+ * @file
+ * Javascript for ninesixtyrobots theme.
+ */
 (function ($) {
 
 // Prefill the search box with Search... text.
