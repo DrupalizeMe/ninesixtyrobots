@@ -1,4 +1,39 @@
 <?php
+/**
+ * Implmentation of hook_theme().
+ */
+function ninesixtyrobots_theme() {
+  return array(
+    // Add our own function to override the default node form for story.
+    'article_node_form' => array(
+      'render element' => 'form',
+    ),
+  );
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function ninesixtyrobots_form_article_node_form_alter(&$form, &$form_state) {
+  // Move the status element outside of the options fieldset so that it doesn't
+  // get taken over by the vertical tabs #pre_render operation. If the status
+  // element is not moved here you'll end up with duplicates when trying to
+  // render the status element on it's own below.
+  $form['status'] = $form['options']['status'];
+  unset($form['options']['status']);
+}
+
+/**
+ * Custom function to pull the Published check box out and make it obvious.
+ */
+function ninesixtyrobots_article_node_form($variables) {
+  $form = $variables['form'];
+  $published = drupal_render($form['status']);
+  $buttons = drupal_render($form['actions']);
+  // Make sure we also render the rest of the form, not just our custom stuff.
+  $everything_else = drupal_render_children($form);
+  return $everything_else . $published . $buttons;
+}
 
 /**
  * Add custom PHPTemplate variables into the node template.
