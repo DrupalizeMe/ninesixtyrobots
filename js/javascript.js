@@ -1,7 +1,12 @@
+(function ($) {
 
 // Prefill the search box with Search... text.
-$(document).ready(function(){
-  $('#search input:text').autofill({
-    value: "Search..."
-  });
-});
+Drupal.behaviors.ninesixtyrobots = {
+  attach: function (context) {
+    $('#search-block-form input:text', context).autofill({
+      value: "Search ..."
+    });
+  }
+};
+
+})(jQuery);
