@@ -11,11 +11,14 @@
   
   <div class="meta post-info">
   <?php if ($display_submitted): ?>
-    <div class="meta submitted">
-      <?php print $user_picture; ?>
-      <?php print $submitted; ?>
-    </div>
+    <span class="submitted">
+      Posted by: <?php print $name; ?>
+    </span>
   <?php endif; ?>
+
+  <?php if ($tags = render($content['field_tags'])): ?>
+    | Filed under: <span class="terms terms-inline"><?php print $tags; ?></span>
+  <?php endif;?>
   </div>
 
   <div class="content clearfix"<?php print $content_attributes; ?>>

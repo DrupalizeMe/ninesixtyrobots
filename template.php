@@ -13,6 +13,9 @@ function ninesixtyrobots_preprocess_node(&$vars) {
 
   // Add the .post class to all nodes.
   $vars['classes_array'][] = 'post';
+
+  // Change the theme function used for rendering the list of tags.
+  $vars['content']['field_tags']['#theme'] = 'links';
 }
 
 /**

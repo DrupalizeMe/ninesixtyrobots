@@ -735,6 +735,10 @@ div.dateblock span.year {
   border: none;
 }
 
+.terms a {
+  margin-right: 10px;
+}
+
 /* Comments */
 #comments {
   margin: 12px 10px;
