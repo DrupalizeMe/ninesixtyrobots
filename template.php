@@ -10,6 +10,9 @@ function ninesixtyrobots_preprocess_node(&$vars) {
   $vars['date_day'] = format_date($node->created, 'custom', 'j');
   $vars['date_month'] = format_date($node->created, 'custom', 'M');
   $vars['date_year'] = format_date($node->created, 'custom', 'Y');
+
+  // Add the .post class to all nodes.
+  $vars['classes_array'][] = 'post';
 }
 
 /**
