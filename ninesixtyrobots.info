@@ -26,6 +26,6 @@ scripts[] = js/jquery.autofill.js
 scripts[] = js/javascript.js
 
 ; Theme settings defaults.
-settings[breadcrumb_delimiter] = ' » '
-settings[use_twitter] = 1
-settings[twitter_search_term] = 'lullabot'
+settings[ninesixtyrobots][breadcrumb_delimiter] = ' » '
+settings[ninesixtyrobots][use_twitter] = 1
+settings[ninesixtyrobots][twitter_search_term] = 'lullabot'

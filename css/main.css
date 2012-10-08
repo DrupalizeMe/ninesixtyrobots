@@ -274,17 +274,6 @@ input.button {
 /* ------------------------------------------
 LAYOUT
 ------------------------------------------- */
-#content-outer {
-}
-#content-wrapper {
-  margin: 0 auto;
-  background-color: #fff;
-  padding-bottom: 35px;
-  padding-top: 5px;
-  overflow: auto;
-  text-align: left;
-  border-bottom: 4px solid #5C4B45;
-}
 #header-wrap {
   /*width: 100%;
   background: #fff url(../images/bg.gif) repeat-x ;
@@ -441,6 +430,19 @@ LAYOUT
 }
 #header #nav ul li.active a {
   color: #FFF;
+}
+
+/* Content */
+#content-outer {
+}
+#content-wrapper {
+  margin: 0 auto;
+  background-color: #fff;
+  padding-bottom: 35px;
+  padding-top: 5px;
+  overflow: auto;
+  text-align: left;
+  border-bottom: 4px solid #5C4B45;
 }
 
 /* Main column */
