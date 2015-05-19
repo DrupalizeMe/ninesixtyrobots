@@ -77,9 +77,12 @@ function ninesixtyrobots_preprocess_page(&$vars) {
         cache_set('ninesixtyrobots_tweets', $data, 'cache', 300);
       }
     }
-    $tweet = $data->results[array_rand($data->results)];
-    // Create the actual variable finally.
-    $vars['site_slogan'] = check_plain(html_entity_decode($tweet->text));
+    if (isset($data)) {
+      $tweet = $data->results[array_rand($data->results)];
+
+      // Create the actual variable finally.
+      $vars['site_slogan'] = check_plain(html_entity_decode($tweet->text));
+    }
   }
 }
 
