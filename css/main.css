@@ -3,7 +3,9 @@
 HTML ELEMENTS
 ------------------------------------------------- */
 body {
-  font: 11px/165% 'Lucida Grande', Verdana, Helvetica, sans-serif;
+  line-height: 165%;
+  font-size: 14px;
+  font-family: 'Lucida Grande', Verdana, Helvetica, sans-serif;
   color: #666666;
   margin: 0;
   padding: 0 0 50px 0;
@@ -100,6 +102,7 @@ em, i {
 pre,
 code {
   font: 500 1em/1.5em 'Lucida Console', 'Courier New', Monospace ;
+  text-align: left;
 }
 div.codeblock {
   border: 1px solid #F0F0F0;
@@ -212,7 +215,7 @@ input, select, textarea {
   border-width: 1px;
   border-style: solid;
   border-color: #ebebeb #d4d4d4 #d4d4d4 #ebebeb;
-  font: 11px 'Lucida Grande', Verdana, Helvetica, sans-serif;
+  font-family: 'Lucida Grande', Verdana, Helvetica, sans-serif;
 }
 input.form-submit:focus {
   border-color: #d4d4d4 #ebebeb #ebebeb #d4d4d4;
@@ -274,15 +277,8 @@ input.button {
 /* ------------------------------------------
 LAYOUT
 ------------------------------------------- */
-#header-wrap {
-  /*width: 100%;
-  background: #fff url(../images/bg.gif) repeat-x ;
-  margin: 0;
-  padding: 0;*/
-}
 #header {
   position: relative;
-  margin: 0 auto;
   height: 222px;
   border-top: 14px solid #5C4B45;
   text-align: left;
@@ -342,95 +338,83 @@ LAYOUT
 }
 
 /* Header quick search */
-#header #block-search-form {
-  position: absolute;
-  top: 7px;
-  right: 0;
+header .search-block-form {
+  float: right;
 }
 
-#header form#search-block-form {
+header .search-block-form form {
   padding: 0;
-  margin: 0;
-  border: none;
-  width: 270px;
-  height: 33px;
+  margin: -9px 0 0 0;
   background: #FFF;
   border: 1px solid #AAA;
   z-index: 20;
 }
-#header form#search-block-form p {
-  margin: 0;
-  padding: 0;
+
+header .search-block-form .form-item,
+header .search-block-form .form-actions {
+  display: inline;
 }
-#header form#search-block-form input {
+
+header .search-block-form form input {
   border: none;
-  background: transparent;
+  background: #FFF;
   color: #bababa;
-  float: left;
   margin: 0;
   padding: 5px;
 }
-#header form#search-block-form .form-text {
+
+header .search-block-form form .form-search {
   margin: 6px 0 0 5px;
   width: 200px;
   display: inline;
 }
-#header form#search-block-form .form-submit {
-  height: 29px;
-}
 
-#header form#search-block-form .btn {
+header .search-block-form form .btn {
   width: 25px;
   height: 25px;
   margin-left: 15px;
 }
-#header form#search-block-form label {
+
+header .search-block-form form label {
   display: none;
 }
 
 /* Navigation */
 #header #nav {
   position: absolute;
-  margin: 0;
-  padding: 0;
-  width: 880px;
+  top: 20px;
   left: 0;
-  top: 22px;
 }
+
 #header #nav ul {
   float: left;
   list-style: none;
   margin: 0;
-  height: 26px;
   padding: 0 0 0 10px;
   font-size: 12px;
   text-transform: uppercase;
 }
+
 #header #nav ul li {
   float: left;
-  height: 26px;
-  margin: 0;
-  padding: 5px 0 0 10px;
-  border-top: 1px solid #5C4B45;
-  border-left: 1px solid #5C4B45;
-  border-right: 1px solid #5C4B45;
 }
+
 #header #nav ul li a {
-  float: left;
+  font-family: 'Lucida Grande', Verdana, Helvetica, sans-serif;
+  font-size: 16px;
   margin: 0;
-  padding: 0 15px 0 5px;
+  padding: 10px 20px;
   color: #592D00;
 }
+
 #header #nav ul li a:hover,
 #header #nav ul li a:active {
-  border: none;
   color: #111;
-  background: transparent;
+  text-decoration: underline;
 }
-#header #nav ul li.active {
+
+#header #nav ul li a.is-active {
   background-color: #5C4B45;
-}
-#header #nav ul li.active a {
   color: #FFF;
 }
 
@@ -462,15 +446,15 @@ LAYOUT
   color: #53301B;
   border: none;
 }
-#main .post {
+#main .node {
   margin: 15px 0;
 }
 
-.post .content {
+.node .content {
   padding: 0 15px;
 }  
 
-.post .postmeta {
+.node .meta {
   padding: 5px;
   margin: 20px 15px 15px 10px;
   border: 1px solid #EBEBEB;
@@ -523,25 +507,25 @@ div.dateblock span.year {
 }
 
 /* Sidebar menu */
-.block h3 {
+aside .block h3 {
   border-bottom: 1px solid #EBEBEB;
 }
-.block ul {
+aside .block ul {
   text-align: left;
   margin: 0;
   padding: 0;
 }
-.block ul li {
+aside .block ul li {
   list-style: none;
   background: url(../images/dots.gif) repeat-x left bottom;
   padding: 7px 0;
   margin: 0;
 }
-* html body .block ul li {
+* html body aside .block ul li {
   height: 1%;
 }
-.block ul li a,
-.block ul li a:visited {
+aside .block ul li a,
+aside .block ul li a:visited {
   font-family: Georgia, 'Times New Roman', Times, Serif;
   background-image: none;
   background-color: transparent;
@@ -549,20 +533,20 @@ div.dateblock span.year {
   color: #346199;
   padding-left: 0;
 }
-.block ul li a span {
+aside .block ul li a span {
   color: #9F9F9F;
   font-family: Georgia, 'Times New Roman', Times, Serif;
   font-style: normal;
   font-size: 1em;
 }
-.block ul li a:hover {
+aside .block ul li a:hover {
   color: #000;
 }
-.block ul ul {
+aside .block ul ul {
   margin: 0 0 0 5px;
   padding: 0;
 }
-.block ul ul li {
+aside .block ul ul li {
   background: none;
 }
 
@@ -721,13 +705,13 @@ div.dateblock span.year {
   border-right: none;
 }
 
-.postmeta a.comments {
+.meta a.comments {
   margin: 0 10px 0 5px;
 }
-.postmeta a.readmore {
+.meta a.readmore {
   margin: 0 10px 0 5px;
 }
-.postmeta .date {
+.meta .date {
   margin: 0 10px 0 5px;
 }
 
@@ -740,10 +724,6 @@ div.dateblock span.year {
 .post-info a, .post-info a:visited {
   color: #000;
   border: none;
-}
-
-.terms a {
-  margin-right: 10px;
 }
 
 /* Comments */
@@ -823,10 +803,6 @@ div.dateblock span.year {
   border-bottom: 1px solid #EBEBEB;
 }
 
-ul.primary {
-  white-space: normal;
-}
-
 ul.links.inline {
   display:inline;
 }
@@ -842,8 +818,7 @@ ul.links li {
 }
 
 .messages {
-  margin: 15px 0;
-  padding: 10px;
+  margin: 15px;
 }
 
 .status {
@@ -856,15 +831,6 @@ ul.links li {
 
 .marker, .form-required {
   color: #E22E54;
-}
-
-#user-login-form li.openid-link, #user-login li.openid-link {
-  margin-left: 0;
-  padding-left: 22px;
-  background-position: left center;
-}
-#user-login-form li.user-link, #user-login li.user-link {
-  margin-left: 0;
 }
 
 /* Fix jumpiness with 1px bottom borders. */

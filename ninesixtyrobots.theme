@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * Preprocess function for node.html.twig.
+ */
+function ninesixtyrobots_preprocess_node(&$variables) {
+  // Grab the node object.
+  $node = $variables['node'];
+  // Make individual variables for the parts of the date.
+  // $variables['date_day'] = format_date($node->created, 'custom', 'j');
+  // $variables['date_month'] = format_date($node->created, 'custom', 'M');
+  //$variables['date_year'] = format_date($node->created->value, 'custom', 'Y');
+
+  // Change the theme function used for rendering the list of tags.
+ // $variables['content']['field_tags']['#theme'] = 'item_list';
+}

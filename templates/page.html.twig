@@ -1,0 +1,58 @@
+{{ dump(page) }}
+<div id="header-wrap">
+  <header id="header" class="header container_16" role="banner" aria-label="{{ 'Site header'|t }}">
+    {{ page.header }}
+
+    <div id="nav" class="container_16">
+      {{ page.primary_menu }}
+    </div>
+  </header>
+</div>
+
+<div id="content-wrapper" class="container_16">
+
+  <div id="breadcrumb" class="grid_16">
+    {{ page.breadcrumb }}
+  </div>
+
+  <main role="main" id="main" class="grid_8">
+
+    <section class="section" id="content-output">
+      {{ page.content }}
+    </section>
+  </main>
+
+
+  <aside class="grid_4 alpha sidebar-first" role="complementary">
+    {{ page.sidebar_first }}
+  </aside>
+
+  <aside class="grid_4 omega sidebar-right" role="complementary">
+    {{ page.sidebar_second }}
+  </aside>
+</div>
+
+<footer role="contentinfo" id="footer-wrapper" class="container_16">
+  <div id="footer-content">
+    <div class="grid_8" id="footer-left">
+      {{ page.footer_first }}
+    </div>
+
+    <div class="grid_8" id="footer-right">
+      {{ page.footer_second }}
+    </div>
+  </div>
+
+  <div id="footer-bottom">
+    <div id="footer-meta" class="clear-block">
+      <?php if ($secondary_menu): ?>
+        <div id="secondary-menu" class="navigation">
+          {{ page.secondary_menu }}
+        </div>
+    </div>
+
+    <div id="footer-bottom-content">
+      {{ page.footer_bottom }}
+    </div>
+  </div>
+</footer>
